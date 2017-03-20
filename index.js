@@ -1,6 +1,8 @@
+/*globals require, console */
 "use strict";
 var fs = require('fs');
 
+// Check if the database exists, otherwise, create it
 if (!fs.existsSync('./webofficetoolkit.sqlite')) {
 	console.log('Database not found. Creating it');
 	let sqlite3 = require("sqlite3").verbose();
@@ -20,3 +22,5 @@ if (!fs.existsSync('./webofficetoolkit.sqlite')) {
 	});
 	db.close();
 }
+
+// App start
