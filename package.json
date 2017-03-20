@@ -1,0 +1,17 @@
+{
+  "name": "webofficetoolkit",
+  "version": "1.0.0",
+  "description": "Web Application that helps you manage your office",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Arcangelo Vicedomini",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "express": "^4.15.2",
+    "passport": "^0.3.2",
+    "sequelize": "^3.30.2",
+    "sqlite3": "^3.1.8"
+  }
+}
