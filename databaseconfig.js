@@ -76,4 +76,9 @@ db.Employee = sequelize.define('employee', {
     }
 });
 
-db.Employee.belongsTo(db.Company, {foreignKey: 'companyId'}); 
+db.Employee.belongsTo(db.Company, {foreignKey: 'companyId'});
+
+
+
+// DOMAIN END
+exports.database = db;
