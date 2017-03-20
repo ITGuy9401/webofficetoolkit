@@ -12,9 +12,9 @@ var sequelize = new Sequelize('main', null, null, {
 
 sequelize
     .authenticate()
-    .then(function (err) {
+    .then(() => {
         console.info('Connection to the database has been established successfully.');
-    }, function (err) {
+    }, (err) => {
         console.error('Unable to connect to the database:', err);
     });
 
@@ -78,9 +78,7 @@ db.Employee = sequelize.define('employee', {
 
 db.Employee.belongsTo(db.Company, {foreignKey: 'companyId'});
 
-db.Presence = sequelize.define('presence', {
-    
-});
+db.Presence = sequelize.define('presence')
 
 // DOMAIN END
 exports.database = db;
