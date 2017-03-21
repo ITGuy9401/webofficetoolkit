@@ -24,4 +24,4 @@ if (!fs.existsSync('./webofficetoolkit.sqlite')) {
 }
 
 // App start
-var database = require('./databaseconfig.js').database;
+var database = require('./database-config.js').database;
