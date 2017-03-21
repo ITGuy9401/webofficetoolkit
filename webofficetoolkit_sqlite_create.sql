@@ -12,10 +12,7 @@ CREATE TABLE Employee (
 	surname text,
 	sex text,
 	birthdate datetime,
-	username text,
-	password text,
-	photo blob,
-	enabled text
+	photo blob
 );
 
 CREATE TABLE Presence (
@@ -75,7 +72,7 @@ CREATE TABLE LocationUsing (
 	employeeId integer
 );
 
-CREATE TABLE employeeRole (
+CREATE TABLE EmployeeRole (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	roleId integer,
 	employeeId integer,
@@ -96,5 +93,81 @@ CREATE TABLE Log (
 	type text,
 	timestamp datetime,
 	detail text
+);
+
+CREATE TABLE User (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	username text,
+	password text,
+	email text,
+	cellphone text,
+	profile integer
+);
+
+CREATE TABLE ApplicationRole (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	code text,
+	title text,
+	description text
+);
+
+CREATE TABLE UserApplicationRole (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	role integer,
+	user integer
+);
+
+CREATE TABLE ApplicationRight (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	code text,
+	title text,
+	description text
+);
+
+CREATE TABLE ApplicationRoleRight (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	role integer,
+	right integer
+);
+
+CREATE TABLE Issue (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	code text,
+	title text,
+	description text,
+	project integer,
+	creator integer,
+	assignee integer
+);
+
+CREATE TABLE Attachment (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	isRemote text,
+	remoteUrl text,
+	file blob,
+	creationDate datetime,
+	relatedIssue integer,
+	uploader integer
+);
+
+CREATE TABLE Dashboard (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	title text,
+	description text,
+	location integer
+);
+
+CREATE TABLE DashboardMaintainer (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	maintainer integer,
+	dashboard integer
+);
+
+CREATE TABLE DashboardPost (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	title text,
+	description text,
+	creationDate datetime,
+	creator integer
 );
 
