@@ -49,7 +49,7 @@ CREATE TABLE Project (
 
 CREATE TABLE Task (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	projectId integer,
+	project integer,
 	name text,
 	code text,
 	type text,
@@ -59,8 +59,8 @@ CREATE TABLE Task (
 
 CREATE TABLE Workflow (
 	id integer PRIMARY KEY AUTOINCREMENT,
-	taskId integer,
-	employeeId integer,
+	task integer,
+	employee integer,
 	minutesSpent integer,
 	dateLog datetime,
 	comment text
@@ -133,6 +133,7 @@ CREATE TABLE ApplicationRoleRight (
 CREATE TABLE Issue (
 	id integer PRIMARY KEY AUTOINCREMENT,
 	code text,
+	type integer,
 	title text,
 	description text,
 	project integer,
@@ -169,5 +170,16 @@ CREATE TABLE DashboardPost (
 	description text,
 	creationDate datetime,
 	creator integer
+);
+
+CREATE TABLE ProjectVersion (
+	id integer PRIMARY KEY AUTOINCREMENT,
+	project integer,
+	status text,
+	startDate datetime,
+	endDate datetime,
+	version text,
+	repositoryUrl text,
+	repositoryBranch text
 );
 
