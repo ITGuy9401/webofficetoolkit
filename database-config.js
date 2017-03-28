@@ -163,6 +163,7 @@
 
 		// DOMAIN END
 		// Exporting all database entities to the main application
-		exports.database = db;
+		exports.database = {'entities': db, 'sequelize': sequelize};
+		
 	}
 })(require, exports);
