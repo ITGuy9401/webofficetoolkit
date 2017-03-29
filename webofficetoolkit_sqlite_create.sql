@@ -169,7 +169,8 @@ CREATE TABLE DashboardPost (
 	title text,
 	description text,
 	creationDate datetime,
-	creator integer
+	creator integer,
+	dashboard integer
 );
 
 CREATE TABLE ProjectVersion (
@@ -182,4 +183,3 @@ CREATE TABLE ProjectVersion (
 	repositoryUrl text,
 	repositoryBranch text
 );
-
